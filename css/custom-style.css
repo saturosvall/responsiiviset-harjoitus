@@ -1,12 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 
-body {
+:root {
+    --teksti: #3333333;
+    --tekstivaalea: #efefef;
+    --tausta: #eeeeeee;
+    --bg-dark: #1a1919;
+    --highlight: #2ebebe
+}
+* {
+    box-sizing: border-box;
+}
 
+/*yleiskäyttöisiä tyylejä*/
+/*vertikaalinen keskitys*/
+.v-center {
+    position:absolute;
+    left: 0px;
+    transform: translateY(-50%);
+    
+    top: 50%;
+  
+}
+body {
     font-size: 15px/1.5;
     font-family: 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
-    background-color:blanchedalmond
+    /*oletusvärimuuttuja*/
+    background-color:var(--tausta);
+    color: var(--teksti);
 }
 
 ul {
@@ -14,56 +36,87 @@ ul {
     padding: 0;
 }
 
-.container {
-    width: 80%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
-    background-color: #c45c5c;
-}
+
 /* Header-tyylt */
 header {
-    /*background-color: black;*/
-    color: #f4f4f4;
-    padding: 30px 0;
-    min-height: 100 px;
-    border-bottom: #c45c5c 3px solid;
+    background-color: var(--bg-dark);
+    color: var(--tekstivaalea);
+    padding: 10px;
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    border-bottom: var(--highlight) solid 5px;
 }
 
-/* viitataan brandingin sisällä olevaan kuvaan - risuaita viittaa id, piste classiin */
-#branding img {
-    display: block;
-    float: left;
-    padding: 5px;
-    margin: 0px 10px 0px 10px;
-    height: 50px;
-
-}
-
-#branding h1 {
-    margin: 0px;
-}
-
-/* headerin sisällä olevat valikon linkit tyylitetään*/
-header a {
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 18px;
-}
+/* risuaita viittaa id, piste classiin */
 
 /* headerin sisällä olevat valikon listaelementit tyylitetään*/
 header li {
     display: inline;
     padding: 0 20px;
+    width: 100%;
 }
 
 /* headerin sisällä olevat valikon nav tyylitetään*/
-header nav {
-    float: left;
-    margin-top: 15px;
+
+/* headerin sisällä olevat valikon linkit tyylitetään*/
+header nav a {
+    display: inline-block;
+    font-size: 1.2em;
+    padding: 0.3em;
+    color: var(--tekstivaalea);
+    text-decoration: none;
 }
 
+header nav a:hover{
+    color: var(--teksti);
+    background-color: var(--highlight);
+    
+}
 header #branding {
     float: right;
+}
+
+/* main-lohkon tyylit */
+main {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    padding-top: 90px;
+}
+
+/*section-lohkon tyylit */
+section {
+    max-width: 800px;
+    width: 70%;
+    margin: 20px auto;
+}
+
+/*showcase*/
+.showcase {
+    font-size: 0.7em;
+    padding: 10px 0;
+    width: 70%;
+    height: 100%;
+    /*background-color: bisque;*/
+}
+
+/*content*/
+.content {
+    font-size: 0.7em;
+    line-height: 1.5em;
+    padding: 30px 0;
+    width: 70%;
+    height: 100%;
+}
+
+/*footertyylit*/
+footer {
+    height: 20%;
+    background-color: var(--bg-dark);
+    color: var(--tekstivaalea);
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.8em;
+    border-top: var(--highlight) solid 5px;
 }
