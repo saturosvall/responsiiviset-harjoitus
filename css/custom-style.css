@@ -4,8 +4,9 @@
     --teksti: #3333333;
     --tekstivaalea: #efefef;
     --tausta: #eeeeeee;
-    --bg-dark: #1a1919;
-    --highlight: #2ebebe
+    --bg-dark: #312f2f;
+    --highlight: #24acb1;
+    --highlight_vaalea: #b5dddf;
 }
 * {
     box-sizing: border-box;
@@ -16,8 +17,7 @@
 .v-center {
     position:absolute;
     left: 0px;
-    transform: translateY(-50%);
-    
+    transform: translateY(-50%); 
     top: 50%;
   
 }
@@ -31,12 +31,6 @@ body {
     color: var(--teksti);
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-
 /* Header-tyylt */
 header {
     background-color: var(--bg-dark);
@@ -47,6 +41,7 @@ header {
     width: 100%;
     top: 0;
     border-bottom: var(--highlight) solid 5px;
+    float: right;
 }
 
 /* risuaita viittaa id, piste classiin */
@@ -54,27 +49,29 @@ header {
 /* headerin sisällä olevat valikon listaelementit tyylitetään*/
 header li {
     display: inline;
-    padding: 0 20px;
+    padding: 0 30px;
     width: 100%;
 }
-
-/* headerin sisällä olevat valikon nav tyylitetään*/
 
 /* headerin sisällä olevat valikon linkit tyylitetään*/
 header nav a {
     display: inline-block;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing:0.120em;
     padding: 0.3em;
     color: var(--tekstivaalea);
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 header nav a:hover{
-    color: var(--teksti);
+    color: #000000;
     background-color: var(--highlight);
-    
+    font-weight: bold;
 }
-header #branding {
+    
+header  {
     float: right;
 }
 
@@ -98,24 +95,47 @@ section {
     padding: 10px 0;
     width: 70%;
     height: 100%;
-    /*background-color: bisque;*/
+    /*background-color: var(--highlight_vaalea)*/
 }
 
 /*content*/
 .content {
     font-size: 0.7em;
     line-height: 1.5em;
-    padding: 30px 0;
+    padding: 10px 0;
     width: 70%;
     height: 100%;
 }
+.content2 {
+    font-size: 0.7em;
+    line-height: 1.5em;
+    padding: 10px 0;
+    width: 70%;
+    height: 100%;
+}
+/*kokeilu*/
+.content2 p::first-line {
+    font-weight: bold;  
+}
 
+.content ul {
+    list-style-type: square;
+}
+/*tutkinnon osat*/
+.content h2 {
+    font-size:x-large;
+    font-weight: bold;
+    background-color: var(--highlight_vaalea);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
 /*footertyylit*/
 footer {
-    height: 20%;
+    height: 10%;
     background-color: var(--bg-dark);
     color: var(--tekstivaalea);
-    padding: 40px 0;
+    padding: 20px 0;
     text-align: center;
     font-size: 0.8em;
     border-top: var(--highlight) solid 5px;
